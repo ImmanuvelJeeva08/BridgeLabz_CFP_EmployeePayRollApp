@@ -3,6 +3,7 @@ package com.example.emppay.controller;
 import com.example.emppay.dto.EmployeeDTO;
 import com.example.emppay.dto.ResponseDTO;
 import com.example.emppay.service.EmployeeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/payroll_service")
+@Slf4j
 public class Controller {
 
     @Autowired
@@ -26,6 +28,7 @@ public class Controller {
 
     @PostMapping(value = "/addEmployeeDetails")
     public ResponseEntity<ResponseDTO> addEmployeeDetails(@Valid @RequestBody EmployeeDTO employeeDTO) {
+        log.info("Inside addEmployeeDetails()");
         EmployeeDTO addData = employeeService.addEmployee(employeeDTO);
         ResponseDTO responseDTO = new ResponseDTO("Added Employee Payroll Details", addData);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
@@ -38,6 +41,7 @@ public class Controller {
 
     @GetMapping(value = "/getEmployeeDetails")
     public ResponseEntity<ResponseDTO> getEmployeeDetails() {
+        log.info("Inside getEmployeeDetails()");
         List<EmployeeDTO> employeeList = employeeService.getEmployee();
         ResponseDTO responseDTO = new ResponseDTO("Fetched all Employee Payroll Details", employeeList);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
@@ -51,6 +55,7 @@ public class Controller {
 
     @GetMapping(value = "/getEmployeeDetailsByID")
     public ResponseEntity<ResponseDTO> getEmployeeDetailsByID(@RequestParam(name = "id") int id) {
+        log.info("Inside getEmployeeDetailsByID()");
         EmployeeDTO employeeDTO = employeeService.getEmployeeByID(id);
         ResponseDTO responseDTO = new ResponseDTO("Fetched by ID : Employee Payroll Details", employeeDTO);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
@@ -66,6 +71,7 @@ public class Controller {
     @PutMapping(value = "/updateEmployeeDetails")
     public ResponseEntity<ResponseDTO> updateEmployeeDetails(@RequestParam(name = "id") int id,
                                                              @Valid @RequestBody EmployeeDTO employeeDTO) {
+        log.info("Inside updateEmployeeDetails()");
         EmployeeDTO updatedData = employeeService.updateEmployeeDetails(id, employeeDTO);
         ResponseDTO responseDTO = new ResponseDTO("Updated by ID : Employee Payroll Details", updatedData);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
@@ -79,6 +85,7 @@ public class Controller {
 
     @DeleteMapping(value = "/deleteEmployeeDetails")
     public ResponseEntity<ResponseDTO> deleteEmployeeDetails(@RequestParam(name = "id") int id) {
+        log.info("Inside deleteEmployeeDetails()");
         EmployeeDTO deletedData = employeeService.deleteEmployee(id);
         ResponseDTO responseDTO = new ResponseDTO("Deleted by ID : Employee Payroll Details", deletedData);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);

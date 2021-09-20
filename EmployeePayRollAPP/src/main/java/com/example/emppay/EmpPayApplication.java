@@ -13,12 +13,15 @@
  ******************************************************************************************************************************/
 package com.example.emppay;
 
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@Slf4j
 public class EmpPayApplication {
 
     @Bean
@@ -29,7 +32,10 @@ public class EmpPayApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(EmpPayApplication.class, args);
+        ApplicationContext context = SpringApplication.run(EmpPayApplication.class, args);
+        log.info("Employee Payroll Application Started in {} Environment",
+                context.getEnvironment().getProperty("environment"));
+        log.info("Inside Main Method.");
     }
 
 }

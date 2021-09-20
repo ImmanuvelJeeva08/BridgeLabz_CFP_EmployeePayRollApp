@@ -1,0 +1,30 @@
+2021-09-20 09:11:20,865 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting EmpPayApplication using Java 11.0.11 on Lenovo with PID 16720 (D:\CFP - Spring and Angular\BridgeLabz_CFP_EmployeePayRollApp\EmployeePayRollAPP\target\classes started by ELCOT in D:\CFP - Spring and Angular\BridgeLabz_CFP_EmployeePayRollApp\EmployeePayRollAPP)
+2021-09-20 09:11:20,865 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-09-20 09:11:20,880 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2021-09-20 09:11:59,815 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-20 09:12:01,769 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started EmpPayApplication in 43.849 seconds (JVM running for 54.628)
+2021-09-20 09:12:01,769 INFO com.example.emppay.EmpPayApplication [restartedMain] Employee Payroll Application Started in DEV Environment
+2021-09-20 09:12:01,784 INFO com.example.emppay.EmpPayApplication [restartedMain] Inside Main Method.
+2021-09-20 09:13:01,754 INFO com.example.emppay.controller.Controller [http-nio-8080-exec-1] Inside getEmployeeDetails()
+2021-09-20 09:13:01,754 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-1] Inside getEmployeeDetails()
+2021-09-20 09:15:14,478 INFO com.example.emppay.controller.Controller [http-nio-8080-exec-7] Inside addEmployeeDetails()
+2021-09-20 09:15:14,478 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-7] Inside addEmployee()
+2021-09-20 09:15:49,356 INFO com.example.emppay.controller.Controller [http-nio-8080-exec-8] Inside getEmployeeDetailsByID()
+2021-09-20 09:15:49,364 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-8] Inside getEmployeeByID()
+2021-09-20 09:15:49,364 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-8] Inside findEmployeeById()
+2021-09-20 09:19:03,789 INFO com.example.emppay.controller.Controller [http-nio-8080-exec-3] Inside updateEmployeeDetails()
+2021-09-20 09:19:03,789 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-3] Inside updateEmployeeDetails()
+2021-09-20 09:19:03,789 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-3] Inside findEmployeeById()
+2021-09-20 09:19:33,277 INFO com.example.emppay.controller.Controller [http-nio-8080-exec-4] Inside updateEmployeeDetails()
+2021-09-20 09:19:33,277 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-4] Inside updateEmployeeDetails()
+2021-09-20 09:19:33,285 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-4] Inside findEmployeeById()
+2021-09-20 09:20:14,147 INFO com.example.emppay.controller.Controller [http-nio-8080-exec-5] Inside updateEmployeeDetails()
+2021-09-20 09:20:14,147 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-5] Inside updateEmployeeDetails()
+2021-09-20 09:20:14,147 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-5] Inside findEmployeeById()
+2021-09-20 09:21:26,456 INFO com.example.emppay.controller.Controller [http-nio-8080-exec-7] Inside getEmployeeDetails()
+2021-09-20 09:21:26,464 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-7] Inside getEmployeeDetails()
+2021-09-20 09:22:16,848 INFO com.example.emppay.controller.Controller [http-nio-8080-exec-10] Inside deleteEmployeeDetails()
+2021-09-20 09:22:16,848 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-10] Inside deleteEmployee()
+2021-09-20 09:22:16,848 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-10] Inside findEmployeeById()
+2021-09-20 09:22:38,035 INFO com.example.emppay.controller.Controller [http-nio-8080-exec-2] Inside getEmployeeDetails()
+2021-09-20 09:22:38,043 INFO com.example.emppay.service.EmployeeService [http-nio-8080-exec-2] Inside getEmployeeDetails()

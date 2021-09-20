@@ -4,6 +4,7 @@ import com.example.emppay.dto.EmployeeDTO;
 import com.example.emppay.entity.Employee;
 import com.example.emppay.exception.EmployeePayrollException;
 import com.example.emppay.repository.EmployeeRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class EmployeeService {
 
     @Autowired
@@ -28,6 +30,7 @@ public class EmployeeService {
      */
 
     public EmployeeDTO addEmployee(EmployeeDTO employeeDTO) {
+        log.info("Inside addEmployee()");
         Employee employeeRequest = modelMapper.map(employeeDTO, Employee.class);
         employeeRepository.save(employeeRequest);
         return employeeDTO;
@@ -39,6 +42,7 @@ public class EmployeeService {
      */
 
     public List<EmployeeDTO> getEmployee() {
+        log.info("Inside getEmployeeDetails()");
         return employeeRepository.findAll().stream().map(employee -> new EmployeeDTO(
                 employee.getEmpId(), employee.getEmpName(), employee.getEmpAddress(),
                 employee.getEmpSalary(), employee.getEmpMobileNo(), employee.getEmpEmail())).
@@ -52,6 +56,7 @@ public class EmployeeService {
      */
 
     public EmployeeDTO getEmployeeByID(int id) {
+        log.info("Inside getEmployeeByID()");
         Employee employee = findEmployeeById(id);
         EmployeeDTO employeeResponse = modelMapper.map(employee, EmployeeDTO.class);
         return employeeResponse;
@@ -64,6 +69,7 @@ public class EmployeeService {
      */
 
     private Employee findEmployeeById(int id) {
+        log.info("Inside findEmployeeById()");
         return employeeRepository.findById(id)
                 .orElseThrow(() -> new EmployeePayrollException("Unable to find any Employee Payroll detail!"));
     }
@@ -76,6 +82,7 @@ public class EmployeeService {
      */
 
     public EmployeeDTO updateEmployeeDetails(int id, EmployeeDTO employeeDTO) {
+        log.info("Inside updateEmployeeDetails()");
         EmployeeDTO employeeResponse = null;
         if (id > 0) {
             Employee employeeDetails = findEmployeeById(id);
@@ -94,6 +101,7 @@ public class EmployeeService {
      */
 
     public EmployeeDTO deleteEmployee(int id) {
+        log.info("Inside deleteEmployee()");
         EmployeeDTO employeeResponse = null;
         if (id > 0) {
             Employee employee = findEmployeeById(id);
