@@ -2,6 +2,7 @@ package com.example.emppay.controller;
 
 import com.example.emppay.dto.EmployeeDTO;
 import com.example.emppay.dto.ResponseDTO;
+import com.example.emppay.entity.Employee;
 import com.example.emppay.service.EmployeeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,8 +87,21 @@ public class Controller {
     @DeleteMapping(value = "/deleteEmployeeDetails")
     public ResponseEntity<ResponseDTO> deleteEmployeeDetails(@RequestParam(name = "id") int id) {
         log.info("Inside deleteEmployeeDetails()");
-        EmployeeDTO deletedData = employeeService.deleteEmployee(id);
-        ResponseDTO responseDTO = new ResponseDTO("Deleted by ID : Employee Payroll Details", deletedData);
+        employeeService.deleteEmployee(id);
+        ResponseDTO responseDTO = new ResponseDTO("Deleted by ID : Employee Payroll Details", null);
+        return new ResponseEntity<>(responseDTO, HttpStatus.OK);
+    }
+
+    /**
+     * Purpose : Ability to get employee from DB using department name
+     * @param department
+     * @return
+     */
+
+    @GetMapping(value = "/getEmployeeByDepartment")
+    public ResponseEntity<ResponseDTO> getEmployeeByDepartment(@RequestParam(name = "department") String department) {
+        List<Employee> employeeList = employeeService.getEmployeeByDepartment(department);
+        ResponseDTO responseDTO = new ResponseDTO("Get Employee By Deprtment", employeeList);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 

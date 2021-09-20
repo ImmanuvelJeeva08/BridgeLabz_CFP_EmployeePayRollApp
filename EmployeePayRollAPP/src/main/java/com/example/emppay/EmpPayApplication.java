@@ -7,6 +7,12 @@
  * Use Lombok Library to auto generate getters and setters for the DTO.
  * Validation and Exception handing are added.
  *
+ * Database setting as Environment variable.
+ * Added the concept of Interface.
+ * Updated the Bean class and added validation and customized exception.
+ * Ability to get employee from DB using department name.
+ *
+ *
  * @author : IMMANUVEL JEEVA
  * @since  : 15.09.2021
  *
